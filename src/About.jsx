@@ -1,4 +1,5 @@
 import { FileText, Code2, GraduationCap } from "lucide-react";
+import cvFile from "./assets/cv.pdf";
 
 import profilePhoto from "./assets/profile.png";
 import Reveal from "./components/Reveal";
@@ -120,7 +121,7 @@ export default function About() {
             <div className="flex flex-wrap gap-4">
 
               <a
-                href="/cv.pdf"
+                href={cvFile}
                 download
                 className="
                   group
