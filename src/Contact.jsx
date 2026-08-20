@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 
-// ==========================================
-// ICÔNE GITHUB
-// ==========================================
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  ArrowRight,
+} from "lucide-react";
+
+import Reveal from "./components/Reveal";
 
 function GithubIcon({ size = 20 }) {
   return (
@@ -28,10 +33,6 @@ function GithubIcon({ size = 20 }) {
   );
 }
 
-// ==========================================
-// ICÔNE LINKEDIN
-// ==========================================
-
 function LinkedinIcon({ size = 20 }) {
   return (
     <svg
@@ -50,22 +51,11 @@ function LinkedinIcon({ size = 20 }) {
   );
 }
 
-// ==========================================
-// INFORMATIONS DE CONTACT
-// ==========================================
-
 const INFO = {
-  // ⚠️ Mets ici ton véritable compte Gmail
   email: "hounastitonou@gmail.com",
-
   phone: "+225 01 51 58 36 23",
-
   location: "Abidjan, Côte d'Ivoire",
 };
-
-// ==========================================
-// RÉSEAUX SOCIAUX
-// ==========================================
 
 const SOCIALS = [
   {
@@ -80,10 +70,6 @@ const SOCIALS = [
   },
 ];
 
-// ==========================================
-// COMPOSANT CONTACT
-// ==========================================
-
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -92,20 +78,12 @@ export default function Contact() {
     message: "",
   });
 
-  // ========================================
-  // GESTION DES CHAMPS
-  // ========================================
-
   const handleChange = (field) => (e) => {
     setForm((prev) => ({
       ...prev,
       [field]: e.target.value,
     }));
   };
-
-  // ========================================
-  // ENVOI VERS GMAIL
-  // ========================================
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -115,197 +93,375 @@ Email: ${form.email}
 
 ${form.message}`;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-      INFO.email
-    )}&su=${encodeURIComponent(
-      form.subject || "Contact depuis le portfolio"
-    )}&body=${encodeURIComponent(body)}`;
+    const gmailUrl =
+      `https://mail.google.com/mail/?view=cm&fs=1` +
+      `&to=${encodeURIComponent(INFO.email)}` +
+      `&su=${encodeURIComponent(
+        form.subject || "Contact depuis le portfolio"
+      )}` +
+      `&body=${encodeURIComponent(body)}`;
 
-    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    window.open(
+      gmailUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
     <section
       id="contact"
-      className="min-h-screen px-6 lg:px-24 py-28 max-w-[1600px] mx-auto"
+      className="
+        min-h-screen
+        px-6 lg:px-24
+        py-28
+        max-w-[1600px]
+        mx-auto
+        overflow-hidden
+      "
     >
-      {/* ================================= */}
+
       {/* TITRE */}
-      {/* ================================= */}
+      <Reveal variant="down" duration={800}>
+        <div className="text-center mb-16">
 
-      <div className="text-center mb-16">
-        <h2 className="text-6xl lg:text-7xl font-extrabold mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-            Parlons de votre projet
-          </span>
-        </h2>
+          <h2 className="text-6xl lg:text-7xl font-extrabold mb-6">
+            <span
+              className="
+                text-transparent
+                bg-clip-text
+                bg-gradient-to-r
+                from-primary
+                to-accent
+              "
+            >
+              Parlons de votre projet
+            </span>
+          </h2>
 
-        <p className="text-muted text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
-          Une idée, une opportunité ou simplement envie d'échanger ?
-          N'hésitez pas à me contacter.
-        </p>
-      </div>
+          <p className="text-muted text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+            Une idée, une opportunité ou simplement envie d'échanger ?
+            N'hésitez pas à me contacter.
+          </p>
 
-      {/* ================================= */}
+        </div>
+      </Reveal>
+
       {/* CONTENU */}
-      {/* ================================= */}
+      <div
+        className="
+          grid
+          md:grid-cols-2
+          gap-10
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
-        {/* ================================= */}
+          max-w-6xl
+          mx-auto
+
+          items-start
+        "
+      >
+
         {/* COORDONNÉES */}
-        {/* ================================= */}
+        <Reveal variant="left" duration={900}>
+          <div
+            className="
+              bg-card
+              border border-white/10
+              rounded-3xl
+              p-10
 
-        <div className="bg-card border border-white/10 rounded-3xl p-10">
-          <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8">
-            Mes coordonnées
-          </h3>
+              transition-all duration-500
 
-          <div className="flex flex-col gap-8">
-            {/* EMAIL */}
+              hover:border-accent/20
+              hover:shadow-[0_20px_45px_rgba(0,0,0,0.15)]
+            "
+          >
 
-            <InfoRow
-              icon={Mail}
-              label="Email"
-              value={INFO.email}
-            />
+            <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8">
+              Mes coordonnées
+            </h3>
 
-            {/* TÉLÉPHONE */}
+            <div className="flex flex-col gap-8">
 
-            <InfoRow
-              icon={Phone}
-              label="Téléphone"
-              value={INFO.phone}
-            />
+              <InfoRow
+                icon={Mail}
+                label="Email"
+                value={INFO.email}
+              />
 
-            {/* LOCALISATION */}
+              <InfoRow
+                icon={Phone}
+                label="Téléphone"
+                value={INFO.phone}
+              />
 
-            <InfoRow
-              icon={MapPin}
-              label="Localisation"
-              value={INFO.location}
-            />
+              <InfoRow
+                icon={MapPin}
+                label="Localisation"
+                value={INFO.location}
+              />
 
-            {/* RÉSEAUX SOCIAUX */}
+              {/* RÉSEAUX */}
+              <div className="flex items-start gap-5 group">
 
-            <div className="flex items-start gap-5">
-              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0">
-                <ArrowRight size={22} />
+                <div
+                  className="
+                    w-12 h-12
+                    rounded-xl
+
+                    bg-white/5
+                    border border-white/10
+
+                    flex items-center justify-center
+
+                    text-accent
+                    shrink-0
+
+                    transition-all duration-300
+
+                    group-hover:border-accent/40
+                    group-hover:bg-accent/5
+                    group-hover:scale-105
+                  "
+                >
+                  <ArrowRight
+                    size={22}
+                    className="
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                    "
+                  />
+                </div>
+
+                <div>
+
+                  <div className="text-muted text-base mb-3">
+                    Réseaux sociaux
+                  </div>
+
+                  <div className="flex flex-wrap gap-5">
+
+                    {SOCIALS.map(
+                      ({ icon: Icon, label, href }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="
+                            flex items-center gap-2
+
+                            text-text
+
+                            transition-all duration-300
+
+                            hover:text-accent
+                            hover:translate-x-1
+                          "
+                        >
+                          <Icon size={22} />
+
+                          {label}
+                        </a>
+                      )
+                    )}
+
+                  </div>
+
+                </div>
+
               </div>
+
+            </div>
+
+          </div>
+        </Reveal>
+
+        {/* FORMULAIRE */}
+        <Reveal
+          variant="right"
+          delay={150}
+          duration={900}
+        >
+          <form
+            onSubmit={handleSubmit}
+            className="
+              bg-card
+              border border-white/10
+              rounded-3xl
+              p-10
+
+              transition-all duration-500
+
+              hover:border-accent/20
+              hover:shadow-[0_20px_45px_rgba(0,0,0,0.15)]
+            "
+          >
+
+            <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8">
+              Envoyez-moi un message
+            </h3>
+
+            <div className="flex flex-col gap-5 mb-7">
+
+              <Field
+                label="Nom"
+                value={form.name}
+                onChange={handleChange("name")}
+                placeholder="Votre nom"
+                required
+              />
+
+              <Field
+                label="Email"
+                type="email"
+                value={form.email}
+                onChange={handleChange("email")}
+                placeholder="votre@email.com"
+                required
+              />
+
+              <Field
+                label="Sujet"
+                value={form.subject}
+                onChange={handleChange("subject")}
+                placeholder="Objet de votre message"
+              />
 
               <div>
-                <div className="text-muted text-base mb-3">
-                  Réseaux sociaux
-                </div>
+                <label className="text-base text-muted mb-2 block">
+                  Message
+                </label>
 
-                <div className="flex flex-wrap gap-5">
-                  {SOCIALS.map(({ icon: Icon, label, href }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 text-text hover:text-accent transition-colors text-base"
-                    >
-                      <Icon size={22} />
-                      {label}
-                    </a>
-                  ))}
-                </div>
+                <textarea
+                  value={form.message}
+                  onChange={handleChange("message")}
+                  placeholder="Votre message..."
+                  rows={5}
+                  required
+                  className="
+                    w-full
+
+                    bg-white/5
+                    border border-white/10
+
+                    rounded-xl
+
+                    px-5 py-4
+
+                    text-lg
+                    text-text
+
+                    placeholder:text-muted
+
+                    focus:outline-none
+                    focus:border-accent/50
+                    focus:bg-white/[0.07]
+
+                    resize-none
+
+                    transition-all duration-300
+
+                    focus:shadow-[0_0_0_3px_rgba(79,107,255,0.08)]
+                  "
+                />
               </div>
+
             </div>
-          </div>
-        </div>
 
-        {/* ================================= */}
-        {/* FORMULAIRE */}
-        {/* ================================= */}
+            {/* BOUTON */}
+            <button
+              type="submit"
+              className="
+                group
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-card border border-white/10 rounded-3xl p-10"
-        >
-          <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8">
-            Envoyez-moi un message
-          </h3>
+                flex items-center
+                justify-center
+                gap-3
 
-          <div className="flex flex-col gap-5 mb-7">
-            {/* NOM */}
+                w-full
 
-            <Field
-              label="Nom"
-              value={form.name}
-              onChange={handleChange("name")}
-              placeholder="Votre nom"
-              required
-            />
+                px-7 py-4
 
-            {/* EMAIL */}
+                rounded-xl
 
-            <Field
-              label="Email"
-              type="email"
-              value={form.email}
-              onChange={handleChange("email")}
-              placeholder="votre@email.com"
-              required
-            />
+                bg-gradient-to-r
+                from-primary
+                to-accent
 
-            {/* SUJET */}
+                text-bg
 
-            <Field
-              label="Sujet"
-              value={form.subject}
-              onChange={handleChange("subject")}
-              placeholder="Objet de votre message"
-            />
+                text-lg
+                font-semibold
 
-            {/* MESSAGE */}
+                transition-all duration-300
 
-            <div>
-              <label className="text-base text-muted mb-2 block">
-                Message
-              </label>
+                hover:-translate-y-1
+                hover:shadow-[0_12px_30px_rgba(79,107,255,0.25)]
 
-              <textarea
-                value={form.message}
-                onChange={handleChange("message")}
-                placeholder="Votre message..."
-                rows={5}
-                required
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-lg text-text placeholder:text-muted focus:outline-none focus:border-accent/50 resize-none transition-colors"
+                active:scale-[0.98]
+              "
+            >
+              Envoyer le message
+
+              <Send
+                size={20}
+                className="
+                  transition-transform
+                  duration-300
+
+                  group-hover:translate-x-1
+                  group-hover:-rotate-6
+                "
               />
-            </div>
-          </div>
+            </button>
 
-          {/* ================================= */}
-          {/* BOUTON */}
-          {/* ================================= */}
+          </form>
+        </Reveal>
 
-          <button
-            type="submit"
-            className="flex items-center justify-center gap-3 w-full px-7 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-bg text-lg font-semibold hover:opacity-90 transition-opacity"
-          >
-            Envoyer le message
-            <Send size={20} />
-          </button>
-        </form>
       </div>
+
     </section>
   );
 }
 
-// ==========================================
-// LIGNE D'INFORMATION
-// ==========================================
-
 function InfoRow({ icon: Icon, label, value }) {
   return (
-    <div className="flex items-start gap-5">
-      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0">
-        <Icon size={22} />
+    <div className="flex items-start gap-5 group">
+
+      <div
+        className="
+          w-12 h-12
+          rounded-xl
+
+          bg-white/5
+          border border-white/10
+
+          flex items-center justify-center
+
+          text-accent
+          shrink-0
+
+          transition-all duration-300
+
+          group-hover:border-accent/40
+          group-hover:bg-accent/5
+          group-hover:scale-105
+        "
+      >
+        <Icon
+          size={22}
+          className="
+            transition-transform
+            duration-300
+            group-hover:scale-110
+          "
+        />
       </div>
 
       <div>
+
         <div className="text-muted text-base mb-1">
           {label}
         </div>
@@ -313,14 +469,12 @@ function InfoRow({ icon: Icon, label, value }) {
         <div className="text-text font-medium text-lg break-all">
           {value}
         </div>
+
       </div>
+
     </div>
   );
 }
-
-// ==========================================
-// CHAMP DU FORMULAIRE
-// ==========================================
 
 function Field({ label, ...props }) {
   return (
@@ -331,7 +485,29 @@ function Field({ label, ...props }) {
 
       <input
         {...props}
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-lg text-text placeholder:text-muted focus:outline-none focus:border-accent/50 transition-colors"
+        className="
+          w-full
+
+          bg-white/5
+          border border-white/10
+
+          rounded-xl
+
+          px-5 py-4
+
+          text-lg
+          text-text
+
+          placeholder:text-muted
+
+          focus:outline-none
+          focus:border-accent/50
+          focus:bg-white/[0.07]
+
+          transition-all duration-300
+
+          focus:shadow-[0_0_0_3px_rgba(79,107,255,0.08)]
+        "
       />
     </div>
   );
