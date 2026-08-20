@@ -84,7 +84,7 @@ export default function About() {
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto">
-        <Stat className="text-4xl w-24" value="3" label="Projets totals" />
+        <Stat className="text-4xl w-24" value="4" label="Projets totals" />
         <Stat className="text-4xl w-24" value="3" label="Certificats" />
         <Stat className="text-4xl w-24" value="0" label="Années d'expérience" />
       </div>

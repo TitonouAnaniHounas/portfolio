@@ -1,27 +1,41 @@
 import { ExternalLink } from "lucide-react";
+import shoplyImage from "../assets/shoply.png";
+import skycastImage from "../assets/skycast.png";
+import taskflowImage from "../assets/taskflow.png";
+import pontImage from "../assets/pont.png";
 
-// Remplace par tes 3 vrais projets
+// Remplace par tes 4 vrais projets
 const PROJECTS = [
   {
-    name: "Nom du projet 1",
-    description: "Courte description de ce que fait ce projet.",
-    tags: ["React", "Tailwind"],
-    demoUrl: "#",
-    githubUrl: "#",
+    name: "shoply",
+    description: "Application e-commerce moderne permettant de parcourir des produits, rechercher et filtrer des articles, gérer un panier et consulter les détails des produits.",
+    tags: ["html", "css", "javascript"],
+    imgUrl: shoplyImage,
+    demoUrl: "https://titonouananihounas.github.io/shoply/",
+    githubUrl: "https://github.com/TitonouAnaniHounas/shoply",
   },
   {
-    name: "Nom du projet 2",
-    description: "Courte description de ce que fait ce projet.",
-    tags: ["JavaScript", "Node.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    name: "skycast",
+    description: "Application météo interactive permettant de rechercher une ville et d’obtenir les conditions météorologiques actuelles ainsi que les prévisions grâce à une API météo.",
+    tags: ["html", "css", "javascript"],
+    imgUrl: skycastImage,
+    demoUrl: "https://titonouananihounas.github.io/skycast/",
+    githubUrl: "https://github.com/TitonouAnaniHounas/skycast",
   },
   {
-    name: "Nom du projet 3",
-    description: "Courte description de ce que fait ce projet.",
-    tags: ["React", "Firebase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    name: "taskflow",
+    description: "Application de gestion de tâches permettant de créer, organiser et suivre ses tâches avec une interface moderne et intuitive, afin d’améliorer sa productivité.",
+    tags: ["html", "css", "javascript", "React", "tailwindcss"],
+    imgUrl: taskflowImage,
+    demoUrl: "https://titonouananihounas.github.io/taskflow/",
+    githubUrl: "https://github.com/TitonouAnaniHounas/taskflow",
+  },
+  {
+    name: "pont-hkb",
+    description: "Application web de gestion et d’automatisation du péage du pont HKB, permettant de gérer les passages, les paiements et les recettes, avec un tableau de bord d’administration et des fonctionnalités de reconnaissance faciale et OCR.",
+    tags: ["html", "css", "javascript", "PHP", "MySQL"],
+    imgUrl: pontImage,
+    githubUrl: "https://github.com/TitonouAnaniHounas/pont-hkb",
   },
 ];
 
@@ -49,7 +63,7 @@ export default function ProjectsTab() {
           className="bg-card border border-white/10 rounded-2xl p-6 hover:border-accent/40 transition-colors"
         >
           <div className="h-36 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 mb-5 flex items-center justify-center text-muted text-sm">
-            Aperçu du projet
+            <img src={project.imgUrl} alt={project.name} className="w-full h-full object-cover" />
           </div>
 
           <h3 className="text-xl font-bold text-text mb-2">{project.name}</h3>
@@ -69,14 +83,20 @@ export default function ProjectsTab() {
           </div>
 
           <div className="flex gap-3">
-            <a
-              href={project.demoUrl}
-              className="flex items-center gap-1.5 text-sm text-accent hover:opacity-80"
-            >
-              <ExternalLink size={14} /> Demo
-            </a>
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-sm text-accent hover:opacity-80"
+              >
+                <ExternalLink size={14} /> Demo
+              </a>
+            )}
             <a
               href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-sm text-muted hover:text-text"
             >
               <GithubIcon size={14} /> Code

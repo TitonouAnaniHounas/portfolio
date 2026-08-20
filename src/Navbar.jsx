@@ -3,7 +3,7 @@ import { useState } from "react";
 const LINKS = [
   { id: "home", label: "Accueil" },
   { id: "about", label: "A propos de moi" },
-  { id: "portfolio", label: "Projets" },
+  { id: "portfolio", label: "Réalisations" },
   { id: "contact", label: "Contact" },
 ];
 

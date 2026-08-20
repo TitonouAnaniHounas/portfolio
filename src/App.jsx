@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import About from "./About";
 import Portfolio from "./Portfolio";
+import Contact from "./Contact";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -16,8 +17,12 @@ function App() {
         <Hero />
         <About />
         <Portfolio />
-        <section id="contact" className="min-h-screen">Contact</section>
+        <Contact />
       </main>
+      <footer className="bg-card text-text py-6 text-center">
+        &copy; {new Date().getFullYear()} Anani Hounas Titonou. Tous droits
+        réservés.
+      </footer>
     </>
   );
 }

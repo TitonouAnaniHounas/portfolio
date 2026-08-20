@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectsTab from "./portfolio/ProjectsTab";
 import CertificatesTab from "./portfolio/CertificatesTab";
-import TechStackTab from "./portfolio/TechStackTab"
+import TechStackTab from "./portfolio/TechStackTab";
 
 const TABS = [
   { id: "projects", label: "Projets" },
@@ -20,7 +20,7 @@ export default function Portfolio() {
       <div className="text-center mb-14">
         <h2 className="text-5xl lg:text-6xl font-extrabold mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-            Portfolio Showcase
+            Présentation de portfolio
           </span>
         </h2>
         <p className="text-muted text-lg lg:text-xl max-w-2xl mx-auto">

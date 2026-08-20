@@ -9,7 +9,7 @@ const ROLES = [
   "Integrateur web Junior",
 ];
 
-const TECHS = ["React", "JavaScript", "PHP", "Tailwind"];
+const TECHS = ["html", "css", "React", "JavaScript", "PHP", "Tailwind"];
 
 function GithubIcon({ size = 16 }) {
   return (
