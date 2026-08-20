@@ -1,16 +1,96 @@
-# React + Vite
+# 🌐 Portfolio — Hounas Titonou
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Bienvenue sur le dépôt de mon portfolio personnel.
 
-Currently, two official plugins are available:
+Ce portfolio présente mon parcours, mes compétences techniques, mes projets réalisés ainsi que les différentes technologies que j'utilise dans le développement web.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 👨‍💻 À propos de moi
 
-## React Compiler
+Je suis **Hounas Titonou**, étudiant en **Réseaux et Génie Logiciel** à Pigier Côte d'Ivoire et passionné par le développement web.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Je m'intéresse particulièrement au développement **Front-end** et je travaille actuellement avec :
 
-## Expanding the Oxlint configuration
+- HTML
+- CSS
+- JavaScript
+- React
+- Tailwind CSS
+- PHP
+- MySQL
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Mon objectif est de continuer à développer mes compétences et d'évoluer progressivement vers le **développement Full Stack**.
+
+## 🚀 Portfolio en ligne
+
+👉 **Voir mon portfolio :**
+
+https://titonouananihounas.github.io/portfolio/
+
+## ✨ Fonctionnalités
+
+Le portfolio comprend plusieurs sections :
+
+- 🏠 **Accueil** — Présentation rapide et réseaux sociaux
+- 👨‍💻 **À propos** — Présentation personnelle
+- 🎓 **Parcours** — Formation et parcours académique
+- 📊 **Statistiques** — Projets et certifications
+- 💼 **Portfolio** — Présentation de mes projets
+- 📜 **Certificats** — Présentation de mes certifications
+- 🛠️ **Stack technique** — Technologies que j'utilise
+- 📩 **Contact** — Formulaire permettant de me contacter
+
+### 🎨 Animations
+
+Le site utilise différentes animations pour rendre l'expérience plus dynamique :
+
+- Animations d'apparition au scroll
+- Effets de transition
+- Animations au survol
+- Effets sur les boutons
+- Animation de la navigation
+- Effets sur les cartes
+- Animation du texte dans la section Hero
+
+## 🛠️ Technologies utilisées
+
+| Technologie | Utilisation |
+|---|---|
+| HTML | Structure |
+| CSS | Mise en forme |
+| JavaScript | Interactions |
+| React | Architecture de l'application |
+| Tailwind CSS | Design et responsive |
+| Lucide React | Icônes |
+| Vite | Environnement de développement |
+| Git | Gestion de versions |
+| GitHub | Hébergement du code |
+
+## 📂 Structure du projet
+
+```text
+src/
+├── assets/
+│   ├── images
+│   ├── certificats
+│   └── animations
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── Reveal.jsx
+│   ├── Cursor.jsx
+│   └── ...
+│
+├── hooks/
+│   ├── useInView.jsx
+│   └── useTypewriterLoop.jsx
+│
+├── portfolio/
+│   ├── ProjectsTab.jsx
+│   ├── CertificatesTab.jsx
+│   └── TechStackTab.jsx
+│
+├── About.jsx
+├── Hero.jsx
+├── Portfolio.jsx
+├── Contact.jsx
+└── App.jsx
