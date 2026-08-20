@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 
+// ==========================================
+// ICÔNE GITHUB
+// ==========================================
+
 function GithubIcon({ size = 20 }) {
   return (
     <svg
@@ -8,6 +12,7 @@ function GithubIcon({ size = 20 }) {
       width={size}
       height={size}
       fill="currentColor"
+      aria-hidden="true"
     >
       <path
         d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55
@@ -23,6 +28,10 @@ function GithubIcon({ size = 20 }) {
   );
 }
 
+// ==========================================
+// ICÔNE LINKEDIN
+// ==========================================
+
 function LinkedinIcon({ size = 20 }) {
   return (
     <svg
@@ -30,6 +39,7 @@ function LinkedinIcon({ size = 20 }) {
       width={size}
       height={size}
       fill="currentColor"
+      aria-hidden="true"
     >
       <path
         d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9
@@ -40,15 +50,22 @@ function LinkedinIcon({ size = 20 }) {
   );
 }
 
-// ===============================
+// ==========================================
 // INFORMATIONS DE CONTACT
-// ===============================
+// ==========================================
 
 const INFO = {
-  email: "hounastitonou@email.com",
+  // ⚠️ Mets ici ton véritable compte Gmail
+  email: "hounastitonou@gmail.com",
+
   phone: "+225 01 51 58 36 23",
+
   location: "Abidjan, Côte d'Ivoire",
 };
+
+// ==========================================
+// RÉSEAUX SOCIAUX
+// ==========================================
 
 const SOCIALS = [
   {
@@ -63,9 +80,9 @@ const SOCIALS = [
   },
 ];
 
-// ===============================
+// ==========================================
 // COMPOSANT CONTACT
-// ===============================
+// ==========================================
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -75,12 +92,20 @@ export default function Contact() {
     message: "",
   });
 
+  // ========================================
+  // GESTION DES CHAMPS
+  // ========================================
+
   const handleChange = (field) => (e) => {
     setForm((prev) => ({
       ...prev,
       [field]: e.target.value,
     }));
   };
+
+  // ========================================
+  // ENVOI VERS GMAIL
+  // ========================================
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,11 +115,13 @@ Email: ${form.email}
 
 ${form.message}`;
 
-    const mailto = `mailto:${INFO.email}?subject=${encodeURIComponent(
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      INFO.email
+    )}&su=${encodeURIComponent(
       form.subject || "Contact depuis le portfolio"
     )}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailto;
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -102,9 +129,9 @@ ${form.message}`;
       id="contact"
       className="min-h-screen px-6 lg:px-24 py-28 max-w-[1600px] mx-auto"
     >
-      {/* ========================= */}
-      {/* TITRE DE LA SECTION */}
-      {/* ========================= */}
+      {/* ================================= */}
+      {/* TITRE */}
+      {/* ================================= */}
 
       <div className="text-center mb-16">
         <h2 className="text-6xl lg:text-7xl font-extrabold mb-6">
@@ -119,14 +146,14 @@ ${form.message}`;
         </p>
       </div>
 
-      {/* ========================= */}
+      {/* ================================= */}
       {/* CONTENU */}
-      {/* ========================= */}
+      {/* ================================= */}
 
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
-        {/* ========================= */}
+        {/* ================================= */}
         {/* COORDONNÉES */}
-        {/* ========================= */}
+        {/* ================================= */}
 
         <div className="bg-card border border-white/10 rounded-3xl p-10">
           <h3 className="text-2xl lg:text-3xl font-bold text-text mb-8">
@@ -134,17 +161,23 @@ ${form.message}`;
           </h3>
 
           <div className="flex flex-col gap-8">
+            {/* EMAIL */}
+
             <InfoRow
               icon={Mail}
               label="Email"
               value={INFO.email}
             />
 
+            {/* TÉLÉPHONE */}
+
             <InfoRow
               icon={Phone}
               label="Téléphone"
               value={INFO.phone}
             />
+
+            {/* LOCALISATION */}
 
             <InfoRow
               icon={MapPin}
@@ -183,9 +216,9 @@ ${form.message}`;
           </div>
         </div>
 
-        {/* ========================= */}
+        {/* ================================= */}
         {/* FORMULAIRE */}
-        {/* ========================= */}
+        {/* ================================= */}
 
         <form
           onSubmit={handleSubmit}
@@ -244,7 +277,9 @@ ${form.message}`;
             </div>
           </div>
 
+          {/* ================================= */}
           {/* BOUTON */}
+          {/* ================================= */}
 
           <button
             type="submit"
@@ -259,9 +294,9 @@ ${form.message}`;
   );
 }
 
-// ===============================
+// ==========================================
 // LIGNE D'INFORMATION
-// ===============================
+// ==========================================
 
 function InfoRow({ icon: Icon, label, value }) {
   return (
@@ -275,7 +310,7 @@ function InfoRow({ icon: Icon, label, value }) {
           {label}
         </div>
 
-        <div className="text-text font-medium text-lg">
+        <div className="text-text font-medium text-lg break-all">
           {value}
         </div>
       </div>
@@ -283,9 +318,9 @@ function InfoRow({ icon: Icon, label, value }) {
   );
 }
 
-// ===============================
+// ==========================================
 // CHAMP DU FORMULAIRE
-// ===============================
+// ==========================================
 
 function Field({ label, ...props }) {
   return (

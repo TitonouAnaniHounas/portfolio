@@ -140,11 +140,11 @@ export default function Hero() {
         </div>
 
         {/* Illustration */}
-        <div className="hidden md:flex justify-center">
+        <div className="flex justify-center order-first md:order-last">
           <img
             src={devAnimation}
             alt="Developer illustration"
-            className="w-full max-w-lg lg:max-w-2xl object-contain"
+            className="w-56 sm:w-72 md:w-full md:max-w-lg lg:max-w-2xl object-contain"
           />
         </div>
       </div>
