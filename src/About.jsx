@@ -6,7 +6,7 @@ import Reveal from "./components/Reveal";
 
 const EDUCATION = [
   {
-    title: "BTS Informatique Développeur d'Applications",
+    title: "Admissible au BTS Informatique Développeur d'Applications",
     place: "Pigier Côte d'Ivoire",
     period: "2026",
   },
@@ -77,7 +77,7 @@ export default function About() {
                   to-accent
                 "
               >
-                Hello, I'm
+                Salut, je suis
               </span>
             </h3>
 
