@@ -86,12 +86,7 @@ export default function About() {
             </h3>
 
             <p className="text-muted text-lg lg:text-xl leading-relaxed mb-6">
-              Étudiant en Réseaux et Génie Logiciel à Pigier Côte d'Ivoire
-              et passionné par le développement web. Je conçois des
-              interfaces modernes, responsives et interactives avec HTML,
-              CSS, JavaScript, React et Tailwind CSS. Curieux et motivé,
-              je cherche constamment à améliorer mes compétences à travers
-              des projets concrets et à évoluer vers le développement Full Stack.
+              Étudiant en Réseaux et Génie Logiciel à Pigier Côte d'Ivoire et développeur Full Stack en apprentissage. Je m’intéresse au développement web et je réalise des applications modernes, responsives et interactives avec des technologies comme HTML, CSS, JavaScript, React, Tailwind CSS, Node.js, Express.js et MongoDB. Encore en début de parcours, je ne me considère pas comme un expert : je perfectionne continuellement mes compétences à travers des projets concrets, la pratique et l’apprentissage de nouvelles technologies.
             </p>
 
             {/* CITATION */}

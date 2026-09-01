@@ -37,6 +37,21 @@ const TECHS = [
     color: "4479A1",
   },
   {
+    name: "Node.js",
+    slug: "nodedotjs",
+    color: "339933",
+  },
+  {
+    name: "Express.js",
+    slug: "express",
+    color: "FFFFFF",
+  },
+  {
+    name: "MongoDB",
+    slug: "mongodb",
+    color: "47A248",
+  },
+  {
     name: "Git",
     slug: "git",
     color: "F05032",
@@ -65,7 +80,6 @@ export default function TechStackTab() {
         gap-5
       "
     >
-
       {TECHS.map(({ name, slug, color }, i) => (
         <Reveal
           key={name}
@@ -76,27 +90,20 @@ export default function TechStackTab() {
           <div
             className="
               group
-
               flex flex-col
               items-center
               gap-3
-
               bg-card
               border border-white/10
               rounded-2xl
-
               py-8 px-4
-
               transition-all duration-500
-
               hover:border-accent/40
               hover:-translate-y-2
               hover:bg-white/[0.06]
-
               hover:shadow-[0_15px_35px_rgba(0,0,0,0.18)]
             "
           >
-
             <img
               src={`https://cdn.simpleicons.org/${slug}/${color}`}
               alt={name}
@@ -105,7 +112,6 @@ export default function TechStackTab() {
               className="
                 transition-all
                 duration-500
-
                 group-hover:scale-110
                 group-hover:-rotate-3
               "
@@ -114,7 +120,6 @@ export default function TechStackTab() {
             <span className="text-text text-sm font-medium text-center">
               {name}
             </span>
-
           </div>
         </Reveal>
       ))}
@@ -128,19 +133,14 @@ export default function TechStackTab() {
         <div
           className="
             group
-
             flex flex-col
             items-center
             gap-3
-
             bg-card
             border border-white/10
             rounded-2xl
-
             py-8 px-4
-
             transition-all duration-500
-
             hover:border-accent/40
             hover:-translate-y-2
             hover:bg-white/[0.06]
@@ -150,17 +150,12 @@ export default function TechStackTab() {
             className="
               w-10 h-10
               rounded-lg
-
-              flex
-              items-center
+              flex items-center
               justify-center
-
               font-bold
               text-sm
-
               transition-transform
               duration-500
-
               group-hover:scale-110
               group-hover:rotate-3
             "
@@ -178,7 +173,6 @@ export default function TechStackTab() {
           </span>
         </div>
       </Reveal>
-
     </div>
   );
 }

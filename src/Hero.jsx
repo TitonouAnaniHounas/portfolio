@@ -7,9 +7,11 @@ import Reveal from "./components/Reveal";
 import devAnimation from "./assets/Animation1.gif";
 
 const ROLES = [
-  "Développeur Front-end Junior",
+  "Développeur Fullstack Junior",
   "Développeur Web Junior",
   "Intégrateur Web Junior",
+  "Développeur Front-end Junior",
+  "Intégrateur back-end Junior",
 ];
 
 const TECHS = [
@@ -157,7 +159,7 @@ export default function Hero() {
                   to-accent
                 "
               >
-                Front-end
+                Fullstack Junior
               </span>
             </h1>
 
