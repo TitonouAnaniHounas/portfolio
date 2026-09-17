@@ -108,7 +108,7 @@ export default function About() {
             >
               <p className="text-text italic text-base lg:text-lg pl-6">
                 Chaque ligne de code me rapproche de la personne que je veux
-                devenir.Marilyn
+                devenir.
               </p>
             </div>
 
